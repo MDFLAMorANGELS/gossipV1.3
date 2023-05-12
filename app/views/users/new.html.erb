@@ -1,0 +1,105 @@
+<header role="banner ">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container ">
+        <p style="margin: 0"  class="navbar-brand d-flex" href="index.html">WHOOP<span class="bg-danger rounded-2 px-1">GANG</span></p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-4">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                <li class="nav-item">
+                    <%= link_to "Home", root_path, class:"nav-link active" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Team", team_path, class:"nav-link" %>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item cta-btn">
+                    <%= link_to "Contact", contact_path, class:"nav-link " %>
+                </li>
+            </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Connexion / Inscription
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="<%= new_session_path %>">Connexion</a>
+                    <a class="dropdown-item" href="<%= new_user_path %>">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container py-5">
+    <section class="gradient-form py-3">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                <div class="card-body p-md-4 mx-md-3">
+
+                    <div class="text-center">
+                    <img src="https://cdn.discordapp.com/emojis/1094966135285370892.webp?size=96&quality=lossless" alt="logo" class="img-fluid mb-3">
+                    <h4  class="mt-1 mb-5 pb-1 d-flex align-items-center">Nous sommes le WHOOP<span class="bg-danger rounded-2 text-white p-1">GANG</span></h4>
+                    </div>
+
+                    <form action="<%= users_path %>" method="POST">
+                        <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+                        <p>Créer votre compte si dessous</p>
+                        
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form2Example1" class="form-control" required placeholder="Votre prénom" name="user_first_name" />
+                            <label class="form-label" for="form2Example1">Prénom</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form2Example2" class="form-control" required placeholder="Votre nom" name="user_last_name" />
+                            <label class="form-label" for="form2Example2">Nom</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="form2Example3" class="form-control" required placeholder="votre age" name="user_age"/>
+                            <label class="form-label" for="form2Example3">age</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form2Example11" class="form-control" required placeholder="email address" name="user_email" />
+                            <label class="form-label" for="form2Example11">Email</label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="form2Example22" class="form-control" required placeholder="Mot de passe" name="user_password" />
+                            <label class="form-label" for="form2Example22">Password</label>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1">
+                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Création !</button>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                            <p class="mb-0 me-2">Vous avez déjà un compte?</p>
+                            <a href="<%= new_session_path %>"> <button type="button" class="btn btn-outline-danger">Connexion</button></a>
+                        </div>
+
+                    </form>
+
+                </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                    <h4 class="mb-4">Nous sommes plus qu'une simple entreprise</h4>
+                    <p class="small mb-0">L'entreprise du Whoop, présente dans la série "Totally Spies", est une organisation secrète spécialisée dans la lutte contre le crime et les menaces mondiales. Le Whoop, acronyme de World Organization of Human Protection, est composé d'agents hautement qualifiés et technologiquement avancés, dont les trois protagonistes, Sam, Clover et Alex, font partie.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+</main>

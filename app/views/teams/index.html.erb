@@ -1,0 +1,81 @@
+<header role="banner ">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container ">
+        <p style="margin: 0"  class="navbar-brand d-flex" href="index.html">WHOOP<span class="bg-danger rounded-2 px-1">GANG</span></p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                <li class="nav-item">
+                    <%= link_to "Home", root_path, class:"nav-link " %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Team", team_path, class:"nav-link active" %>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item cta-btn">
+                    <%= link_to "Contact", contact_path, class:"nav-link " %>
+                </li>
+            </ul>
+            </div>
+             <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Connexion / Inscription
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="<%= new_session_path %>">Connexion</a>
+                    <a class="dropdown-item" href="<%= new_user_path %>">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main class="container py-5">
+    <div class="container text-center py-5">
+        <h2><strong>L'équipe</strong></h2>
+        <div class="container py-5">
+            <div class="row">
+            <div class="col-12 col-lg-4">
+                <%= image_tag("amandine.jpg", alt: "Alex", class: "w-img img_radius") %>
+                <h4 class="text-center py-2"><strong>ALEX</strong></h4>
+                <p class="px-3">Alex est l'experte en technologie de l'équipe, capable de pirater les systèmes de sécurité les plus
+                sophistiqués avec une facilité déconcertante. Elle est également une excellente stratège et sait comment
+                anticiper les mouvements de l'ennemi.</p>
+            </div>
+            <div class="col-12 col-lg-4">
+                <%= image_tag("caroline.jpg", alt: "Samantha", class: "w-img img_radius") %>
+                <h4 class="text-center py-2"><strong>SAMANTHA</strong></h4>
+                <p class="px-3">Samantha est la spécialiste de la discrétion. Elle peut se fondre dans n'importe quel environnement sans se
+                faire remarquer, et sait comment obtenir des informations cruciales sans attirer l'attention.</p>
+            </div>
+            <div class="col-12 col-lg-4">
+                <%= image_tag("chloe.jpg", alt: "Clover", class: "w-img img_radius") %>
+                <h4 class="text-center py-2"><strong>CLOVER</strong></h4>
+                <p class="px-3">Clover est une experte en combat rapproché. Elle est rapide, agile et maîtrise parfaitement les arts
+                martiaux. Elle est également très habile avec les gadgets et peut improviser des solutions sur le terrain.</p>
+            </div>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-around">
+                <div class="col-12 col-lg-4">
+                    <%= image_tag("magnum.jpg", alt: "Magnum", class: "w-img img_radius") %>
+                    <h4 class="text-center py-2"><strong>MAGNUM</strong></h4>
+                    <p class="px-2">Magnum est le spécialiste des armes à feu. Il est capable de manier tous les types d'armes avec une
+                    précision mortelle, et sait comment créer des situations de diversion en utilisant des explosions et des
+                    tirs bien placés.</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <%= image_tag("starsky_hutch.jpg", alt: "starsky_hutch", class: "w-img img_radius") %>
+                    <h4 class="text-center py-2"><strong>STARSKY & HUTCH</strong></h4>
+                    <p class="px-2">Starsky et Hutch sont un duo inséparable qui travaille depuis des années ensemble. Ils sont connus pour
+                    leur esprit d'équipe et leur grande capacité à improviser des solutions sur le terrain.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

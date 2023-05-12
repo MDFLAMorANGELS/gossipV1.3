@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+ body {
+    font-family: Josefin Sans;
+    background: linear-gradient(0.25turn, #c47561e8, #cbcec800, #ba6bbdc7);
+ }
+.img_radius{
+    border-radius: 50px 80px 80px 50px;
+    cursor: pointer;
+}
+.anim:hover{
+    transform: scale(1.05);
+    transition: 0.5s ease ;
+}
+.notice,#dropdownMenuButton{
+    background-color: #1CA884;
+}
+.my-div {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+.my-div.hidden {
+    opacity: 0;
+}
+.card-gossip{
+    background: linear-gradient(45deg,#e66465, #9198e5);
+}
+
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+    
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+}
