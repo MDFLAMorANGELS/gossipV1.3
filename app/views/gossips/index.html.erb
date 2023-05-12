@@ -20,6 +20,13 @@
                 </li>
             </ul>
             </div>
+
+            <% if session[:user_id].present? %>
+            <!-- Le contenu à afficher lorsque la session est active -->
+            <%= button_to "Déconnexion", sessions_path, method: :delete, class: "btn btn-danger" %>
+            <% else %>
+            <!-- Le contenu à afficher lorsque la session n'est pas active -->
+            
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Connexion / Inscription
@@ -29,6 +36,7 @@
                     <a class="dropdown-item" href="<%= new_user_path %>">Inscription</a>
                 </div>
             </div>
+            <% end %>
         </div>
     </nav>
 </header>

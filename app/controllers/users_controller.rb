@@ -2,7 +2,6 @@ class UsersController < ApplicationController
     def new
     end
     def create
-        puts params
         user = User.new(first_name: params["user_first_name"],last_name: params["user_last_name"],age: params["user_age"].to_s,email: params["user_email"],password: params["user_password"])
         if user.save
         # L'utilisateur a été créé avec succès

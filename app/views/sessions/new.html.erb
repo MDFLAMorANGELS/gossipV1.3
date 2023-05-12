@@ -48,29 +48,31 @@
                     <h4  class="mt-1 mb-5 pb-1 d-flex align-items-center">Nous sommes le WHOOP<span class="bg-danger rounded-2 text-white p-1">GANG</span></h4>
                     </div>
 
-                    <form>
-                        <p>Connectez vous</p>
-
-                        <div class="form-outline mb-4">
-                            <input type="email" id="form2Example11" class="form-control" required placeholder="email address"/>
-                            <label class="form-label" for="form2Example11">Email</label>
+                    <%= form_with(url: sessions_path, method: :post) do |form| %>
+                    <% if flash[:danger] %>
+                        <div class="alert alert-danger">
+                        <%= flash[:danger] %>
                         </div>
+                    <% end %>
 
-                        <div class="form-outline mb-4">
-                            <input type="password" id="form2Example22" class="form-control" required placeholder="Mot de passe"/>
-                            <label class="form-label" for="form2Example22">Password</label>
-                        </div>
+                    <div class="form-group orm-outline mb-4">
+                        <%= form.label :email, class:"form-label" %>
+                        <%= form.email_field :email, class: "form-control", placeholder:"Votre email" %>
+                    </div>
 
-                        <div class="text-center pt-1 mb-5 pb-1">
-                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Connexion !</button>
-                        </div>
+                    <div class="form-group orm-outline mb-4">
+                        <%= form.label :password, class:"form-label" %>
+                        <%= form.password_field :password, class: "form-control", placeholder:"Votre Mot de passe" %>
+                    </div>
 
-                        <div class="d-flex align-items-center justify-content-center pb-4">
+                    <div class="form-group">
+                        <%= form.submit "Se connecter", class: "btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" %>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center pb-4">
                             <p class="mb-0 me-2">Vous n'avez pas de compte?</p>
                             <a href="<%= new_user_path %>"> <button type="button" class="btn btn-outline-danger">Inscription</button></a>
-                        </div>
-
-                    </form>
+                    </div>
+                    <% end %>
 
                 </div>
                 </div>
